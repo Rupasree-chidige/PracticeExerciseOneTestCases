@@ -1,4 +1,4 @@
-package com.company.junit;
+package com.stackroute.pe1;
 
 import org.junit.*;
 
@@ -20,17 +20,7 @@ public class EvenBetweenTest {
         evenBetween = null;
     }
 
-    @BeforeClass
-    public static void setUpBeforeClass() {
 
-        System.out.println("BeforeClass");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-
-        System.out.println("AfterClass");
-    }
 
     @Test
     public void givenIntegerShouldReturnEvenNotBetween() {
@@ -50,6 +40,16 @@ public class EvenBetweenTest {
     @Test
     public void givenIntegerShouldReturnOddNotBetween() {
         String result =evenBetween.isEven(231);
+        assertEquals("Odd and not in between 20 and 30",result);
+    }
+    @Test
+    public void givenZeroShouldReturnGivenInputZero() {
+        String result =evenBetween.isEven(0);
+        assertEquals("Given zero as input",result);
+    }
+    @Test
+    public void givenNegativeIntegerShouldOddNotBetween() {
+        String result =evenBetween.isEven(-31);
         assertEquals("Odd and not in between 20 and 30",result);
     }
 

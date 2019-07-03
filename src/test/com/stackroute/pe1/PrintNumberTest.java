@@ -1,4 +1,4 @@
-package com.company.junit;
+package com.stackroute.pe1;
 
 import org.junit.*;
 
@@ -20,21 +20,10 @@ public class PrintNumberTest {
         printNumber = null;
     }
 
-    @BeforeClass
-    public static void setUpBeforeClass() {
-
-        System.out.println("BeforeClass");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-
-        System.out.println("AfterClass");
-    }
 
 
     @Test
-    public void givenShouldReturnUppercase() {
+    public void givenIntegerShouldReturnRepeatedNumberString() {
         String result = printNumber.printNumberRepeated(4);
         assertEquals("1 2 2 3 3 3 4 4 4 4", result);
     }
@@ -43,6 +32,10 @@ public class PrintNumberTest {
         String result = printNumber.printNumberRepeated(-2);
         assertNull("Number Should be Greater than 0",result);
     }
-
+    @Test
+    public void givenZeroShouldReturnEmpty() {
+        String result = printNumber.printNumberRepeated(0);
+        assertNull("Number Should be Greater than 0",result);
+    }
 
 }

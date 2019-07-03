@@ -1,4 +1,4 @@
-package com.company.junit;
+package com.stackroute.pe1;
 
 import org.junit.*;
 
@@ -19,27 +19,20 @@ public class ReverseStringTest {
         reverseString = null;
     }
 
-    @BeforeClass
-    public static void setUpBeforeClass() {
-
-        System.out.println("BeforeClass");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-
-        System.out.println("AfterClass");
-    }
-
     @Test
-    public void givenStringShouldReturnReverseStringcase() {
+    public void givenStringShouldReturnReverseOfString() {
         String result = reverseString.stringReverse("stackroute");
         assertEquals("etuorkcats", result);
     }
     @Test
-    public void givenIntStringShouldReturnReverseStringcase() {
+    public void givenStringContainsIntegersShouldReturnReverseString() {
         String result = reverseString.stringReverse("12345");
         assertEquals("54321", result);
+    }
+    @Test
+    public void givenNullStringShouldReturnGivenNullAsString() {
+        String result = reverseString.stringReverse(null);
+        assertNull("Given Null as String", result);
     }
 
 

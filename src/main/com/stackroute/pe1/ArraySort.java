@@ -1,4 +1,4 @@
-package com.company.junit;
+package com.stackroute.pe1;
 
 public class ArraySort {
     public String sum(int number) {

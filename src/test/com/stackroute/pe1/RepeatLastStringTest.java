@@ -1,4 +1,4 @@
-package com.company.junit;
+package com.stackroute.pe1;
 
 import org.junit.*;
 
@@ -19,27 +19,21 @@ public class RepeatLastStringTest {
         repeatLastString = null;
     }
 
-    @BeforeClass
-    public static void setUpBeforeClass() {
-
-        System.out.println("BeforeClass");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-
-        System.out.println("AfterClass");
-    }
 
     @Test
-    public void givenCharacterShouldReturnLowercase() {
+    public void givenStringAndRepeatNumShouldReturnConcatinatedString() {
         String result = repeatLastString.RepeatLast("stackroute",3);
         assertEquals("stackrouteuteuteute", result);
     }
     @Test
-    public void givenCharacterShouldReturnUppercase() {
+    public void givenStringAndRepeatNegativeNumberShouldReturnRepeatNumberIsNegative() {
         String result = repeatLastString.RepeatLast("Rupasree",-1);
         assertNull("No of last Repeat number should be greater than 0", result);
+    }
+    @Test
+    public void givenNullhouldReturNull() {
+        String result = repeatLastString.RepeatLast(null,1);
+        assertNull("Given null as input", result);
     }
 
 

@@ -1,4 +1,4 @@
-package com.company.junit;
+package com.stackroute.pe1;
 
 import org.junit.*;
 
@@ -20,18 +20,6 @@ public class GuessNumberTest {
         guessNumber = null;
     }
 
-    @BeforeClass
-    public static void setUpBeforeClass() {
-
-        System.out.println("BeforeClass");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-
-        System.out.println("AfterClass");
-    }
-
     @Test
     public void givenIntegerShouldReturnLessThanOriginalNumber() {
         String result =guessNumber.checkMatched(20);
@@ -46,5 +34,15 @@ public class GuessNumberTest {
     public void givenIntegerShouldReturnGreaterThanOriginalNum() {
         String result =guessNumber.checkMatched(45);
         assertEquals("Number Gussed is more than original Number", result);
+    }
+    @Test
+    public void givenNegativeShouldReturnGreaterThanOriginalNum() {
+        String result =guessNumber.checkMatched(-2);
+        assertEquals("Number Gussed is less than original Number", result);
+    }
+    @Test
+    public void givenzeroShouldReturnGreaterThanOriginalNum() {
+        String result =guessNumber.checkMatched(0);
+        assertEquals("Number Gussed is less than original Number", result);
     }
 }

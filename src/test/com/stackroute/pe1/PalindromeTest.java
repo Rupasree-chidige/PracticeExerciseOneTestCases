@@ -1,4 +1,4 @@
-package com.company.junit;
+package com.stackroute.pe1;
 
 import org.junit.*;
 
@@ -20,17 +20,7 @@ public class PalindromeTest {
         palindrome = null;
     }
 
-    @BeforeClass
-    public static void setUpBeforeClass() {
 
-        System.out.println("BeforeClass");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-
-        System.out.println("AfterClass");
-    }
 
     @Test
     public void givenIntegerShouldReturnPalindromeAndEvenSumGreater() {
@@ -47,4 +37,15 @@ public class PalindromeTest {
         String result =palindrome.isPalindrome(124565421);
         assertEquals("124565421 is palindrome and the sum of even numbers is less than 25",result);
     }
+    @Test
+    public void givenZeroShouldReturnNotPalindrome() {
+        String result =palindrome.isPalindrome(0);
+        assertEquals("Given zero as input",result);
+    }
+    @Test
+    public void givenNegativeNumberShouldReturnNegativeNumber() {
+        String result =palindrome.isPalindrome(-234);
+        assertEquals("Given Negative Number",result);
+    }
+
 }

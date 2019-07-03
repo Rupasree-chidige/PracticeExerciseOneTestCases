@@ -1,10 +1,16 @@
-package com.company.junit;
+package com.stackroute.pe1;
 
 public class EvenBetween {
 
     public String isEven(int number)
     {
         String result=null;
+        if(number==0)
+        {
+          result="Given zero as input";
+          return result;
+        }
+
         boolean between;
         if(number%2==0)
         {
